@@ -1,0 +1,15 @@
+{
+  "name": "betagifted-family-system",
+  "version": "2.3.0",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "build": "node tests/build_main.js",
+    "test": "node tests/test_plugin.js && node tests/test_core.js && node tests/test_storage.js && node tests/test_authority.js && node tests/test_auto_menu_2_1_0.js && node tests/test_cache.js && node tests/test_importer.js && node tests/test_missing_ingredients_1_7_0.js && node tests/test_usability_1_5_0.js && node tests/test_view_model.js && node tests/test_task_categories.js",
+    "test:layout": "node tests/test_layout.js",
+    "test:package": "node tests/test_package.js"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

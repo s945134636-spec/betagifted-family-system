@@ -1,0 +1,7 @@
+node_modules/
+main.js
+*.zip
+.DS_Store
+dist/
+coverage/
+test-results/

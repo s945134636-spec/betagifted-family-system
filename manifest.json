@@ -1,0 +1,9 @@
+{
+  "id": "betagifted-family-system",
+  "name": "BetaGifted Family System",
+  "version": "2.3.0",
+  "minAppVersion": "1.8.10",
+  "description": "A local-first household system with domain-partitioned Markdown and JSON authority for Obsidian.",
+  "author": "BetaGifted",
+  "isDesktopOnly": false
+}
