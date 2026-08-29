@@ -66,6 +66,16 @@ async function main() {
   assert.deepStrictEqual({ schema: manifest.schema, schema_version: manifest.schema_version }, { schema: "family-system/store-v4", schema_version: 4 });
   assert.strictEqual(manifest.authority_map.policy, "domain-partitioned-single-authority");
 
+  const legacyManifestPath = "家庭管理系统/00_系统核心/life-core/manifest.json";
+  mockApp.vault.files.set(legacyManifestPath, JSON.stringify({ ...manifest, last_writer_version: "2.2.0" }, null, 2));
+  const beforeUpgrade = new Map(mockApp.vault.files);
+  const reopenedByTwoThree = new CoreStorage(mockApp, "家庭管理系统/00_系统核心/life-core", () => new Date("2026-08-29T10:00:00Z"));
+  await reopenedByTwoThree.initialize();
+  for (const [path, content] of beforeUpgrade) assert.strictEqual(mockApp.vault.files.get(path), content, `2.2→2.3 原地打开不得改写既有文件：${path}`);
+  const reopenedState = await reopenedByTwoThree.loadState();
+  assert.strictEqual(reopenedState.household[0].id, state.household[0].id);
+  assert.strictEqual(JSON.parse(mockApp.vault.files.get(legacyManifestPath)).last_writer_version, "2.2.0");
+
   const household = state.household[0];
   const categoryOperation = await service.preview(cmd("task-category.create", {
     name: "家务协作",
