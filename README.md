@@ -4,7 +4,7 @@ Family System 是面向中文家庭的本地优先 Obsidian 管理插件。家�
 
 当前候选版本为 `2.3.0`，插件 ID 为 `betagifted-family-system`，最低支持 Obsidian `1.8.10`。它延续 `family-system/store-v4`、EffectSet v2 和 2.2 的数据合同，不会把旧数据重写成另一套格式。
 
-> 发行状态：源码与自动化候选已建立。真实 Obsidian 1.8.10、当前稳定版、实体 iPhone 和七天连续运行仍是社区提交前的硬门槛；未完成前不把测试渲染图称作实机截图，也不发布正式 Community Release。
+> 发行状态：源码与自动化候选已建立，并于 2026-08-29 在脱敏隔离 Vault 完成 Obsidian 1.13.7 的首次初始化与窗口重载验收。真实 Obsidian 1.8.10、浅色实机截图、实体 iPhone 和七天连续运行仍是社区提交前的硬门槛；未完成前不发布正式 Community Release。
 
 ## 第一次使用
 
